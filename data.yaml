@@ -1,0 +1,17 @@
+# data.yaml for YOLOv8 kitchen-item detection
+
+# Root directory for the dataset
+path: dataset            
+
+# Relative paths under `path` to training and validation image folders
+train: train/images      
+val:   val/images        
+
+# Number of classes
+nc: 3                    
+
+# Class names (index → name)
+names:
+  0: spoon
+  1: cup
+  2: plate
