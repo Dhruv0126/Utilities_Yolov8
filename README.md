@@ -1,4 +1,4 @@
-# 🍽️ Kitchen Object Detection System
+# 🍽️ Kitchen_Utilities_Yolov8 Item Detection 
 
 A real-time object detection system for kitchen utensils using YOLOv8 can detect spoons, cups, and plates in images and videos.
 
