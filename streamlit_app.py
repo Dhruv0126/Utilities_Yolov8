@@ -1,11 +1,19 @@
 import streamlit as st
-from ultralytics import YOLO
-import numpy as np
-import cv2
-from PIL import Image
-import tempfile
+import sys
 import os
-import time
+
+# Add error handling for imports
+try:
+    from ultralytics import YOLO
+    import numpy as np
+    import cv2
+    from PIL import Image
+    import tempfile
+    import time
+except ImportError as e:
+    st.error(f"Error importing required libraries: {str(e)}")
+    st.error("Please check if all dependencies are installed correctly.")
+    sys.exit(1)
 
 # Page configuration
 st.set_page_config(page_title="Kitchen Utilities Detector", layout="wide")
@@ -20,9 +28,22 @@ if 'result_path' not in st.session_state:
 # Load and cache model
 @st.cache_resource
 def load_model():
-    return YOLO("runs/best.pt")
+    try:
+        # Try to load from runs directory first (local development)
+        model_path = "runs/best.pt"
+        if not os.path.exists(model_path):
+            st.error("Model file not found. Please ensure the model file is in the correct location.")
+            return None
+        return YOLO(model_path)
+    except Exception as e:
+        st.error(f"Error loading model: {str(e)}")
+        return None
 
+# Load model
 model = load_model()
+if model is None:
+    st.error("Failed to load the model. Please check the model file and try again.")
+    st.stop()
 
 # Sidebar selection
 mode = st.sidebar.selectbox("Select Mode", ["Image", "Video", "Webcam"])

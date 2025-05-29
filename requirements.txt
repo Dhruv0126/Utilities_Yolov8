@@ -1,13 +1,16 @@
-ultralytics>=8.0.0    # YOLOv8 library
-streamlit>=1.20.0     # UI framework
-opencv-python>=4.5.5  # Image/video I/O & processing
-pillow>=9.3.0         # Image handling via PIL
-numpy>=1.23.0         # Array operations
-matplotlib>=3.7.0     # Plotting and visualization
-requests>=2.31.0      # HTTP library for API calls
-setuptools>=65.5.1    # Required for distutils
-wheel>=0.38.4         # Required for package installation
-PyQt5==5.15.9         # GUI framework for LabelImg
-lxml>=4.9.2           # XML processing for LabelImg
-labelImg==1.8.6       # Image annotation tool
-ipython>=8.0.0        # Interactive Python shell
+ultralytics==8.0.196
+streamlit==1.31.1
+opencv-python-headless==4.9.0.80
+pillow==10.2.0
+numpy==1.26.4
+matplotlib==3.8.3
+requests==2.31.0
+PyQt5==5.15.10
+lxml==5.1.0
+labelImg==1.8.6
+torch>=2.0.0
+torchvision>=0.15.0
+tqdm>=4.65.0
+pyyaml>=6.0
+seaborn>=0.12.0
+pandas>=2.0.0
