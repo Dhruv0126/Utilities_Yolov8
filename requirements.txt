@@ -3,9 +3,11 @@ streamlit>=1.20.0     # UI framework
 opencv-python>=4.5.5  # Image/video I/O & processing
 pillow>=9.3.0         # Image handling via PIL
 numpy>=1.23.0         # Array operations
+matplotlib>=3.7.0     # Plotting and visualization
 requests>=2.31.0      # HTTP library for API calls
 setuptools>=65.5.1    # Required for distutils
 wheel>=0.38.4         # Required for package installation
 PyQt5==5.15.9         # GUI framework for LabelImg
 lxml>=4.9.2           # XML processing for LabelImg
 labelImg==1.8.6       # Image annotation tool
+ipython>=8.0.0        # Interactive Python shell
